@@ -1,0 +1,16 @@
+name: node-js feature
+on:
+  workflow_call:
+    inputs:
+      project:
+        required: true
+        type: string
+      component:
+        required: true
+        type: string
+jobs:
+  build-nodejs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: read version
+        run: echo "reading version from package.json"
