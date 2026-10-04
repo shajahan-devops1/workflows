@@ -8,9 +8,15 @@ on:
       component:
         required: true
         type: string
+env:
+  project: ${{ inputs.project }}
+  component: ${{ inputs.component }}
 jobs:
   build-nodejs:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout code
+        uses: actions/checkout@v7
       - name: read version
-        run: echo "reading version from package.json"
+        run: |
+          ls -l
