@@ -28,3 +28,7 @@ jobs:
       - name: print version
         run: 
           echo "version is ${{ steps.version.outputs.version }}"
+      - name: install dependencies
+        run: npm install
+      - name: run tests
+        run: npm test
